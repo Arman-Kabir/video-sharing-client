@@ -15,7 +15,7 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightnessOutlined";
+// import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightnessOutlined";
 
 const Container = styled.div`
   flex: 1;
@@ -23,6 +23,8 @@ const Container = styled.div`
   height: 100vh;
   color: white;
   font-size: 14px;
+  position: sticky;
+  top: 0;
 `;
 
 const Wrapper = styled.div`
@@ -49,6 +51,26 @@ const Item = styled.div`
   padding: 7.5px 0px;
 `;
 
+const Hr = styled.hr`
+  margin: 15px 0px;
+  border: 0.5px solid #373737;
+`;
+
+const Login = styled.div``;
+const Button = styled.div`
+  padding: 5px 15px;
+  background-color: transparent;
+  border: 1px solid #3ea6ff;
+  color: #3ea6ff;
+  border-radius: 3px;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
 const Menu = () => {
   return (
     <Container>
@@ -69,7 +91,7 @@ const Menu = () => {
           <SubscriptionsOutlinedIcon />
           Subscriptions
         </Item>
-        {/* <Hr /> */}
+        <Hr />
         <Item>
           <VideoLibraryOutlinedIcon />
           Library
@@ -78,17 +100,17 @@ const Menu = () => {
           <HistoryOutlinedIcon />
           History
         </Item>
-        {/* <Hr /> */}
-        {/* <Login> */}
-          {/* Sign in to like videos, comment, and subscribe. */}
-          {/* <Link to="signin" style={{textDecoration:"none"}}>
-            <Button>
-              <AccountCircleOutlinedIcon />
-              SIGN IN
-            </Button>
-          </Link> */}
-        {/* </Login> */}
-        {/* <Hr /> */}
+        <Hr />
+        <Login>
+          Sign in to like videos, comment, and subscribe.
+          {/* <Link to="signin" style={{textDecoration:"none"}}> */}
+          <Button>
+            <AccountCircleOutlinedIcon />
+            SIGN IN
+          </Button>
+          {/* </Link> */}
+        </Login>
+        <Hr />
         {/* <Title>BEST OF LAMATUBE</Title> */}
         <Item>
           <LibraryMusicOutlinedIcon />
@@ -114,7 +136,7 @@ const Menu = () => {
           <LiveTvOutlinedIcon />
           Live
         </Item>
-        {/* <Hr /> */}
+        <Hr />
         <Item>
           <SettingsOutlinedIcon />
           Settings
