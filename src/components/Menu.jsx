@@ -15,13 +15,14 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-// import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightnessOutlined";
+import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightnessOutlined";
 
 const Container = styled.div`
   flex: 1;
-  background-color: #202020;
+  /* background-color: #202020; */
+  background-color: ${({ theme }) => theme.bg};
   height: 100vh;
-  color: white;
+  color: ${({ theme }) => theme.text};
   font-size: 14px;
   position: sticky;
   top: 0;
@@ -53,7 +54,7 @@ const Item = styled.div`
 
 const Hr = styled.hr`
   margin: 15px 0px;
-  border: 0.5px solid #373737;
+  border: 0.5px solid ${({ theme }) => theme.soft};
 `;
 
 const Login = styled.div``;
@@ -71,7 +72,14 @@ const Button = styled.div`
   gap: 5px;
 `;
 
-const Menu = () => {
+const Title = styled.h2`
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaaaaa;
+  margin-bottom: 20px;
+`;
+
+const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
@@ -111,7 +119,7 @@ const Menu = () => {
           {/* </Link> */}
         </Login>
         <Hr />
-        {/* <Title>BEST OF LAMATUBE</Title> */}
+        <Title>BEST OF RMANTUBE</Title>
         <Item>
           <LibraryMusicOutlinedIcon />
           Music
@@ -149,10 +157,10 @@ const Menu = () => {
           <HelpOutlineOutlinedIcon />
           Help
         </Item>
-        {/* <Item onClick={() => setDarkMode(!darkMode)}>
+        <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlinedIcon />
           {darkMode ? "Light" : "Dark"} Mode
-        </Item> */}
+        </Item>
       </Wrapper>
     </Container>
   );
