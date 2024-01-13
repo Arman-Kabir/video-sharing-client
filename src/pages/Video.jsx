@@ -51,6 +51,46 @@ const Recommendation = styled.div`
   flex: 2;
 `;
 
+const Channel = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ChannelInfo = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+const Image = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+`;
+const ChannelDetail = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: ${({ theme }) => theme.text};
+`;
+const ChannelName = styled.span`
+  font-weight: 500;
+`;
+const ChannelCounter = styled.span`
+  margin: 5px 0 20px 0;
+  color: ${({ theme }) => theme.textSoft};
+  font-size: 12px;
+`;
+const Description = styled.p`
+  font-size: 14px;
+`;
+const Subscribe = styled.button`
+  background-color: #cc1a00;
+  font-weight: 500;
+  color: white;
+  border-radius: 3px;
+  height: max-content;
+  padding: 10px 20px;
+  cursor: pointer;
+`;
+
 const Video = () => {
   return (
     <Container>
@@ -87,6 +127,27 @@ const Video = () => {
           </Buttons>
         </Details>
         <HR></HR>
+        <Channel>
+          <ChannelInfo>
+            <Image src="https://lh3.googleusercontent.com/ogw/ANLem4bjj38Bsj91yCv26WbQZs6v6UnQjQtqv6ZwJf_g=s32-c-mo"></Image>
+            <ChannelDetail>
+              <ChannelName>RMAN DEV</ChannelName>
+              <ChannelCounter>200k subscribers</ChannelCounter>
+              <Description>
+                {" "}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                sint illum esse quae quia. Quisquam, perspiciatis? Eum velit
+                facilis beatae ipsum veritatis minus, itaque modi accusamus ex.
+                Explicabo sunt voluptatum eaque a commodi, eligendi dolorem
+                nisi. Ducimus numquam ad voluptatem unde consequuntur uia a
+                culpa mollitia recusandae sunt facere! Eius officia numquam
+                temporibus ex accusantium necessitatibus dolor laboriosam
+                adipisci est iure. Libero.
+              </Description>
+            </ChannelDetail>
+          </ChannelInfo>
+          <Subscribe>Subscribe</Subscribe>
+        </Channel>
       </Content>
       <Recommendation>Content2</Recommendation>
     </Container>
