@@ -116,15 +116,17 @@ const Menu = ({ darkMode, setDarkMode }) => {
           History
         </Item>
         <Hr />
+
         <Login>
           Sign in to like videos, comment, and subscribe.
-          {/* <Link to="signin" style={{textDecoration:"none"}}> */}
-          <Button>
-            <AccountCircleOutlinedIcon />
-            SIGN IN
-          </Button>
-          {/* </Link> */}
+          <Link to="signin" style={{ textDecoration: "none" }}>
+            <Button>
+              <AccountCircleOutlinedIcon />
+              SIGN IN
+            </Button>
+          </Link>
         </Login>
+        
         <Hr />
         <Title>BEST OF RMANTUBE</Title>
         <Item>
