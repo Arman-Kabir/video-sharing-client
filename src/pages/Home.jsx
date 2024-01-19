@@ -12,21 +12,22 @@ const Container = styled.div`
 
 const Home = ({type}) => {
   const [videos, setVideos] = useState([]);
+  // const [channel, setChannel] = useState([]);
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get(`${API_BASE_URL}videos/random`);
+      const res = await axios.get(`${API_BASE_URL}videos/${type}`);
       // const res = await axios.get("videos/random");
       console.log(res.data);
       setVideos(res.data);
     };
     fetchVideos();
-  }, []);
+  }, [type]);
 
   return (
     <Container>
       {videos.map((video) => (
-        <Card key={video._id} />
+        <Card key={video._id} video={video} />
       ))}
     </Container>
   );
