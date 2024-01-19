@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import {format} from 'timeago.js';
 
 const Container = styled.div`
   width: ${(props) => props.type !== "sm" && "360px"};
@@ -49,13 +50,13 @@ const Info = styled.div`
   color: ${({ theme }) => theme.textSoft};
 `;
 
-const Card = ({ type }) => {
+const Card = ({ type, video }) => {
   return (
     <Link to="/video/test" style={{ textDecoration: "none" }}>
       <Container type={type}>
         <Image
           type={type}
-          src="https://i.ytimg.com/vi/cuHDQhDhvPE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBULOIh9q2RvPhmVZ97JgvpuYiBVA"
+          src={video.imgUrl}
         ></Image>
         <Details type={type}>
           <ChannelImage
@@ -63,9 +64,9 @@ const Card = ({ type }) => {
             src="https://lh3.googleusercontent.com/ogw/ANLem4bjj38Bsj91yCv26WbQZs6v6UnQjQtqv6ZwJf_g=s32-c-mo"
           ></ChannelImage>
           <Texts>
-            <Title>Test Video</Title>
+            <Title>{video.title}</Title>
             <ChannelName>Rman</ChannelName>
-            <Info>660,908 views . 1 day ago</Info>
+            <Info>{video.views} views . {format(video.createdAt)}</Info>
           </Texts>
         </Details>
       </Container>
