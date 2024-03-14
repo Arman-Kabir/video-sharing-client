@@ -59,13 +59,13 @@ const Card = ({ type, video }) => {
 
   useEffect(() => {
     const fetchChannel = async () => {
-      const res = await axios.get(`${API_BASE_URL}users/${type}`);
+      const res = await axios.get(`${API_BASE_URL}users/find/${video.userId}`);
       // const res = await axios.get("videos/random");
       console.log(res.data);
       setChannel(res.data);
     };
     fetchChannel();
-  }, [type]);
+  }, [video.userId]);
   return (
     <Link to="/video/test" style={{ textDecoration: "none" }}>
       <Container type={type}>
@@ -73,16 +73,20 @@ const Card = ({ type, video }) => {
           type={type}
           src={video.imgUrl}
         ></Image>
+
         <Details type={type}>
+          
           <ChannelImage
             type={type}
-            src="https://lh3.googleusercontent.com/ogw/ANLem4bjj38Bsj91yCv26WbQZs6v6UnQjQtqv6ZwJf_g=s32-c-mo"
+            src={channel.img}
           ></ChannelImage>
+
           <Texts>
             <Title>{video.title}</Title>
-            <ChannelName>Rman</ChannelName>
+            <ChannelName>{channel.name}</ChannelName>
             <Info>{video.views} views . {format(video.createdAt)}</Info>
           </Texts>
+
         </Details>
       </Container>
     </Link>
