@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { API_BASE_URL } from "../utils/apiConfig";
+// import { API_BASE_URL } from "../utils/apiConfig";
 
 const Container = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const Home = ({type}) => {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get(`${API_BASE_URL}videos/${type}`);
+      const res = await axios.get(`/api/videos/${type}`);
       // const res = await axios.get("videos/random");
       console.log(res.data);
       setVideos(res.data);

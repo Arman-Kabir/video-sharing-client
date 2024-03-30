@@ -2,7 +2,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { API_BASE_URL } from "../utils/apiConfig";
+// import { API_BASE_URL } from "../utils/apiConfig";
 import { useDispatch } from "react-redux";
 import { loginFailure, loginStart, loginSuccess } from "../redux/userSlice";
 import { auth, provider } from "../firebase";
@@ -75,7 +75,7 @@ const SignIn = () => {
     dispatch(loginStart());
 
     try {
-      const res = await axios.post(`${API_BASE_URL}auth/signin`, {
+      const res = await axios.post(`/api/auth/signin`, {
         name,
         password,
       });
@@ -92,7 +92,7 @@ const SignIn = () => {
       .then((result) => {
         // console.log(result);
         axios
-          .post(`${API_BASE_URL}auth/google`, {
+          .post(`/api/auth/google`, {
             name: result.user.displayName,
             email: result.user.email,
             img: result.user.photoURL,
