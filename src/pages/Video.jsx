@@ -103,10 +103,12 @@ const Video = () => {
             height="720"
             src="https://www.youtube.com/embed/k3Vfj-e1Ma4"
             title="Youtube video player"
+            // eslint-disable-next-line react/no-unknown-property
             frameborder="0"
             allow="accelerometer; autoplay;
           clipboard-write;encrypted-media;
           gyroscope;picture-in-picture"
+            // eslint-disable-next-line react/no-unknown-property
             allowfullscreen
           ></iFrame>
         </VideoWrapper>

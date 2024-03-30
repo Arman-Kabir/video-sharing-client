@@ -53,6 +53,7 @@ const Info = styled.div`
   color: ${({ theme }) => theme.textSoft};
 `;
 
+// eslint-disable-next-line react/prop-types
 const Card = ({ type, video }) => {
   const [channel, setChannel] = useState({});
   // const [channel, setChannel] = useState([]);
@@ -65,12 +66,14 @@ const Card = ({ type, video }) => {
       setChannel(res.data);
     };
     fetchChannel();
+  // eslint-disable-next-line react/prop-types
   }, [video.userId]);
   return (
     <Link to="/video/test" style={{ textDecoration: "none" }}>
       <Container type={type}>
         <Image
           type={type}
+          // eslint-disable-next-line react/prop-types
           src={video.imgUrl}
         ></Image>
 

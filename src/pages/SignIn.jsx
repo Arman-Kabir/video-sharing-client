@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
@@ -64,6 +65,7 @@ const Link = styled.span`
 
 const SignIn = () => {
   const [name, setName] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
@@ -90,17 +92,18 @@ const SignIn = () => {
       .then((result) => {
         // console.log(result);
         axios
-          .post("/auth/google", {
+          .post(`${API_BASE_URL}auth/google`, {
             name: result.user.displayName,
             email: result.user.email,
             img: result.user.photoURL,
           })
           .then((res) => {
+            // console.log(res);
             dispatch(loginSuccess(res.data));
           });
       })
       .catch((error) => {
-        dispatch(loginFailure())
+        dispatch(loginFailure());
       });
   };
 

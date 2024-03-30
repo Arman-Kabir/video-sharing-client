@@ -10,6 +10,7 @@ const Container = styled.div`
   flex-wrap: wrap;
 `;
 
+// eslint-disable-next-line react/prop-types
 const Home = ({type}) => {
   const [videos, setVideos] = useState([]);
   // const [channel, setChannel] = useState([]);
